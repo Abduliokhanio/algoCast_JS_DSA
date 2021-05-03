@@ -9,17 +9,14 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 function chunk(array, size) {
-    
-    let allArr = []
+    allArr = []
 
-    for(let i = 0; i < array.length; i++){
-
-        if(!allArr[allArr.length - 1] || allArr[allArr.length - 1].length === size){
+    for(let i = 0 ; i < array.length; i++ ){
+        if(!allArr[allArr.length-1] || allArr[allArr.length-1].length == size){
             allArr.push([array[i]])
-        }else{
-            allArr[allArr.length - 1].push(array[i])
+        }else {
+            allArr[allArr.length-1].push(array[i])
         }
-
     }
     console.log(allArr)
     return allArr
