@@ -16,17 +16,19 @@
 
 function pyramid(n) {
     let width = 2*n-1
-    let midpoint = Math.floor(width/2)
+    let midP = Math.floor(width/2)
 
-    for(let row =0; row< n; row++){
+    for(let row = 0; row < n; row++){
         let stair = ""
-        for(let column = 0; column < width; column++){
-            if(midpoint - row <= column && midpoint + row >= column){
+
+        for(let col = 0; col < width; col++){
+            if(midP - row <= col && midP + row >= col){
                 stair += "#"
             }else{
-                stair += " "
+                stair += " " 
             }
         }
+
         console.log(stair)
     }
 }
