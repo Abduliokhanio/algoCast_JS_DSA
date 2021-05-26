@@ -60,7 +60,7 @@ function matrix(n) {
    }
 
    console.log(results)
-
+   return results
 }
 
 matrix(3)
