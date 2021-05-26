@@ -23,7 +23,4 @@ function vowels(str) {
     return count
 }
 
-
-vowels("Why do you ask?")
-
 module.exports = vowels;
