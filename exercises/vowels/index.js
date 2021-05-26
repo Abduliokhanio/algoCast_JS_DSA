@@ -9,15 +9,18 @@
 
 function vowels(str) {
     let count = 0
-    let vs= ['a','e','i','o','u']
-    str = str.split("")
+    let strArr = str.split("")
 
-    for(let i = 0; i< str.length; i++){
-        if (vs.includes(str[i])){
+    let vowlesArray = ['a','e','i', 'o', 'u']
+
+    for(let i = 0; i< strArr.length; i++){
+        if(vowlesArray.includes(strArr[i])){
             count++
         }
     }
+
     console.log(count)
+    return count
 }
 
 
