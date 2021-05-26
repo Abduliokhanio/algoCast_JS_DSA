@@ -54,7 +54,7 @@ function matrix(n) {
       results[i][startColumn] = counter;
       counter++;
     }
-    startColumn++;
+    startCol++;
   }
 
   return results;
