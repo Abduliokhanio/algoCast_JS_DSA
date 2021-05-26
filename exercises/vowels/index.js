@@ -8,17 +8,16 @@
 //   vowels('Why?') --> 0
 
 function vowels(str) {
-    let strArray = str.toLowerCase().split("")
     let count = 0
+    let vs= ['a','e','i','o','u']
+    str = str.split("")
 
-    for(let i =0; i < strArray.length; i++){
-        if(strArray[i] === 'a' || strArray[i] === 'e' ||strArray[i] === 'i' ||strArray[i] === 'o' ||strArray[i] === 'u' ){
+    for(let i = 0; i< str.length; i++){
+        if (vs.includes(str[i])){
             count++
         }
     }
-
     console.log(count)
-    return count
 }
 
 
