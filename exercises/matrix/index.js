@@ -17,7 +17,37 @@
 
 function matrix(n) {
    
-    
+    let results = []
+
+    for(let i = 0; i < n; i++){
+        results.push([])
+    }
+
+    let counter = 0
+
+    let colStart = 0
+    let colEnd = n-1
+
+    let rowStart=  0
+    let rowEnd = n-1
+
+    while(colStart <= colEnd && rowStart <= rowEnd){
+
+        //top 
+        
+        
+
+        //right
+
+        //bottom
+
+        //left curve
+
+    }
+
+    console.log(results)
+    return results 
+
     
 }
 
