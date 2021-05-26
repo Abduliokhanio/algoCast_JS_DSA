@@ -9,7 +9,7 @@
 
 function vowels(str) {
     let count = 0
-    let strArr = str.split("")
+    let strArr = str.toLowerCase().split("")
 
     let vowlesArray = ['a','e','i', 'o', 'u']
 
