@@ -17,10 +17,55 @@
 
 function matrix(n) {
 
-    
-    
+    let results = []
+
+    for(let i = 0; i < n; i++){
+        results.push([])
+    }
+
+    let counter =1
+    let startRow = 0
+    let endRow = n-1
+
+    let startCol = 0
+    let endColumn = n-1
+   
+    while( startCol <= endColumn && startRow <= endRow){
+        //top
+        for(let i = startCol; i <= endColumn; i++){
+            results[startRow][i] = counter
+            counter++
+        }
+        startRow++
+
+        //right 
+        for(let i = startRow; i<= endRow; i++){
+            results[i][endColumn] = counter
+            counter++
+        }
+        endColumn--
+
+        //bottom
+        for(let i = endColumn; i>= startCol; i--){
+            results[endRow][i] = counter
+            counter++
+        }
+        endRow--
+
+        //left curve
+        for(let i = endRow; i >= startRow; i--){
+            results[i][startCol] = counter
+            counter++
+        }
+        startCol++
+
+    }
+
+    console.log(results)
+    return results
+
 }
 
-matrix(4)
+matrix(6)
 
 module.exports = matrix;
