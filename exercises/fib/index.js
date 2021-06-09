@@ -8,33 +8,30 @@
 // Example:
 //   fib(4) === 3
 
-let valArr = []
-
 function memoize(fn){
     let cache = {}
-    
+
     return function(...args){
-        
+
         if(cache[args]){
             return cache[args]
         }
 
-        let results = fn.apply(this, args)
-        cache[args] = results
+        let result = fn.apply(this, args)
+        cache[args] = result
 
-        valArr.push([results])
+        return result
 
-        return results
     }
 
 }
 
 function slowFib(n){
-    if(n < 2){
+    if(n<2){
         return n
     }
 
-    return fib(n - 1) + fib(n - 2) 
+    return fib(n-2) + fib(n-1)
 }
 
 let fib = memoize(slowFib)
