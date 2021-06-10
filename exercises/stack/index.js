@@ -21,11 +21,11 @@ class Stack {
     }
 
     pop(){
-        return this.data.pop(this.data[0])
+        return this.data.pop(this.data.length-1)
     }
 
     peek(){
-        return this.data[0]
+        return this.data[this.data.length-1]
     }
 
 }
