@@ -17,9 +17,9 @@ const Stack = require('./stack');
 class Queue {
 
     constructor(){
-        this.stackA = new Stack();
-        this.stackB = new Stack();
-    }  
+        this.stackA = new Stack;
+        this.stackB = new Stack
+    }
 
     add(n){
         this.stackA.push(n)
@@ -29,23 +29,26 @@ class Queue {
         while(this.stackA.peek()){
             this.stackB.push(this.stackA.pop())
         }
-        let rv = this.stackB.peek()
+
+        let ans = this.stackB.peek()
+
         while(this.stackB.peek()){
             this.stackA.push(this.stackB.pop())
         }
-        return rv
+        return ans
     }
 
     remove(){
         while(this.stackA.peek()){
             this.stackB.push(this.stackA.pop())
         }
-        let rv = this.stackB.pop()
+
+        let ans = this.stackB.pop()
+
         while(this.stackB.peek()){
             this.stackA.push(this.stackB.pop())
         }
-        return rv
-
+        return ans
     }
 
 }
