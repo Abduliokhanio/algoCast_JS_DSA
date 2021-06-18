@@ -7,19 +7,25 @@
 //   reverse('Greetings!') === '!sgniteerG'
 
 function reverse(str) {
-    
-    let forward_arr = str.split("");
-    let reverse = ''; 
+    let strArr = str.split('')
+    let revArr = []
+    let revW = ''
 
-    for(let i = forward_arr.length-1; i >= 0; i--){
-        reverse += forward_arr[i];
+    for(let i = strArr.length-1; i >= 0 ; i--){
+        revArr.push(strArr[i])
     }
-    return reverse;
+
+    revW = revArr.join('')
+
+    console.log(revW)
+    return revW
 }
 
 // function reverse(str) {
 //     let ans = str.split("").reverse().join("");
 //     return ans
 // }
+
+reverse('abdulkhan')
 
 module.exports = reverse;

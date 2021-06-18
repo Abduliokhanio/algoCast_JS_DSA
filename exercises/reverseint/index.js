@@ -10,36 +10,31 @@
 
 function reverseInt(n) {
 
-    let str;
-    let reverse = [];
+    let absN = Math.abs(n)
+    let n2s = n.toString()
+    let n2sArr = n2s.split('')
+    let revN2sArr = []
+    let revN2S = ''
+    let s2n = 0
 
-    let absval = Math.abs(n);
-    let absvalstr = absval.toString();
+    for(let i = n2sArr.length -1 ; i>= 0; i--){
+        revN2sArr.push(n2sArr[i])
+    }
 
-    if(Math.sign(n) === -1){
-        
-        for(let i = absvalstr.length-1; i >=0; i-- ){
-            reverse.push(absvalstr[i]);
-        }
-        
-        let revJoined = parseInt(reverse.join("")) *-1;
+    revN2S = revN2sArr.join('')
 
-        return revJoined
-        
-        
+    s2n = parseInt(revN2S)
+
+    if(n < 0){
+        console.log(s2n *-1)
+        return(s2n *-1)
     }else{
-
-        for(let i = absvalstr.length-1; i >=0; i-- ){
-            reverse.push(absvalstr[i]);
-        }
-
-        let revJoined = parseInt(reverse.join(""));
-        return revJoined
-
+        console.log(s2n)
+        return(s2n)
     }
 
 }
 
-reverseInt(1223)
+reverseInt(-1223)
 
 module.exports = reverseInt;

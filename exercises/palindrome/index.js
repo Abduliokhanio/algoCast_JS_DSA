@@ -9,17 +9,21 @@
 
 function palindrome(str) {
 
-    let forwardArray = str.split("");
-    let backwardsArray = [];
+    let strArr = str.split('')
+    let revArr = []
+    let revW = ''
 
-    for(let i = forwardArray.length-1; i >=0; i--){
-        backwardsArray.push(forwardArray[i]);
+    for(let i = strArr.length - 1; i >= 0 ; i--){
+        revArr.push(strArr[i])
     }
 
-    return forwardArray.join("") == backwardsArray.join("")
+    revW = revArr.join('')
+
+    console.log(revW === str)
+    return (revW === str)
 
 }
 
-//palindrome("racecar")
+palindrome("racecar")
 
 module.exports = palindrome;

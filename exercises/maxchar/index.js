@@ -13,31 +13,34 @@ function maxChar(str) {
     //compare the values to see who has the largest value
     //return the key as the answer
 
-    let strMap = {}
-    let strArr = str.split("")
-    let maxint = 0
-    let maxChar
+    let splitStr = str.split('')
+    let cacher = {}
+    let maxC = ''
+    let maxN = 0
 
-    for(let i =0; i < strArr.length; i++ ){
-        
-        if(!strMap[strArr[i]]){
-            strMap[strArr[i]] = 1;
+    for(let i = 0; i < splitStr.length; i++){
+        let element = splitStr[i]
+
+        if(cacher[element]){
+            cacher[element]++
         }else{
-            strMap[strArr[i]]++; 
-        }    
-
-    }
-
-    for(let i =0; i < strArr.length; i ++){
-        //console.log(strMap[strArr[i]])
-
-        if( maxint < strMap[strArr[i]]){
-            maxint = strMap[strArr[i]]
-            maxChar = strArr[i]
+            cacher[element] = 1
         }
     }
 
-    return maxChar
+    let keys = Object.keys(cacher)
+
+    for(let i = 0; i< keys.length; i++){
+        let element = keys[i]
+
+        if(cacher[element] > maxN){
+            maxN = cacher[element]
+            maxC = element
+        }
+    }
+
+    console.log(`max C : ${maxC} && max N : ${maxN}`)
+    return maxC
     
 }
 
