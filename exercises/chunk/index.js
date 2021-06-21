@@ -16,12 +16,11 @@ function chunk(array, size) {
 
         if(!last || last.length === size){
             chunked.push([array[i]])
-        }else {
+        }else{
             last.push(array[i])
         }
     }
     return chunked
-
 }
 
 chunk([1,2,3,4,5,6],4)
