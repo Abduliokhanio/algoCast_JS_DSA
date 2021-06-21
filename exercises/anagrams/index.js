@@ -12,51 +12,49 @@ function anagrams(stringA, stringB) {
     
     function clean(strVal){
         let lc = strVal.toLowerCase()
-        let nw = lc.replace( /[^\w]/g,'')
-        return nw.split('')
+        let nws = lc.replace( /[^\w]/g ,'')
+        return nws.split('')
     }
 
-    function cacheify(arr){
-        let cash = {}
+    function cache(arr1){
+        let cachey = {}
 
-        for(let i = 0; i< arr.length; i++){
-            let element = arr[i]
+        for(let i = 0; i < arr1.length; i++ ){
+            let element = arr1[i]
             
-            if(cash[element]){
-                cash[element]++
+            if(!cachey[element]){
+                cachey[element] = 1
             }else{
-                cash[element] = 1
+                cachey[element]++
             }
         }
-        return cash
+        return cachey
     }
 
-    //split Array
     let arr1 = clean(stringA)
     let arr2 = clean(stringB)
 
-    //hash objs
-    let hash1 = cacheify(arr1)
-    let hash2 = cacheify(arr2)
+    let hash1 = cache(arr1)
+    let hash2 = cache(arr2)
 
-    //keys
+    //keys 
     let key1 = Object.keys(hash1)
     let key2 = Object.keys(hash2)
 
-    if(key1.length !== key2.length){
-        return false
-    }
+    if(key1.length != key2.length){return false}
 
-    for(let i = 0; i < key1.length; i++){
+    for(let i = 0; i < key1.length; i++ ){
         let element = key1[i]
         let val1 = hash1[element]
         let val2 = hash2[element]
+
         if(val1 != val2){
-            return false 
+            return false
         }
     }
 
     return true
+
 }
 
 anagrams('Hello', 'oLaL eh')
