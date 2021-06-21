@@ -37,3 +37,21 @@ module.exports = chunk;
 //
 //   return chunked;
 // }
+
+
+
+//my answer
+function chunk(array, size) {
+  let chunked = []
+
+  for(let i = 0 ; i < array.length; i++){
+      let last = chunked[chunked.length - 1]
+
+      if(!last || last.length == size){
+          chunked.push([array[i]])
+      }else{
+          last.push(array[i])
+      }
+  }
+  return chunked
+}
