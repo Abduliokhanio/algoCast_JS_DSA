@@ -11,16 +11,17 @@
 function chunk(array, size) {
     let chunked = []
 
-    for(let i = 0; i < array.length; i++ ){
-        let lastElement = chunked[chunked.length-1]
+    for(let i = 0; i < array.length; i++){
+        let le = chunked[chunked.length - 1]
         let element = array[i]
 
-        if(!lastElement || lastElement.length === size){
+        if(!le || le.length === size){
             chunked.push([element])
         }else{
-            lastElement.push(element)
+            le.push(element)
         }
-    } return chunked
+        
+    }return chunked
 }
 
 chunk([1,2,3,4,5,6],4)
