@@ -12,15 +12,16 @@ function chunk(array, size) {
     let chunked = []
 
     for(let i = 0; i < array.length; i++){
-        let last =  chunked[chunked.length -1]
+        let last = chunked[chunked.length-1]
 
         if(!last || last.length === size){
             chunked.push([array[i]])
-        }else{
+        }else {
             last.push(array[i])
         }
     }
     return chunked
+
 }
 
 chunk([1,2,3,4,5,6],4)
