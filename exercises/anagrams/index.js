@@ -9,47 +9,56 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
+    
     function clean(strVal){
-        let ls = strVal.toLowerCase()
-        let ns = ls.replace(/[^\w]/g,'')
-        return ns.split('')
+        let lc = strVal.toLowerCase()
+        let nw = lc.replace( /[^\w]/g,'')
+        return nw.split('')
     }
 
-    function cacheify(arr) {
+    function cacheify(arr){
         let cash = {}
 
-        for(let i = 0; i < arr.length; i++){
+        for(let i = 0; i< arr.length; i++){
             let element = arr[i]
-            let val = cash[element]
+            
             if(cash[element]){
                 cash[element]++
             }else{
-                cash[element] = 1;
+                cash[element] = 1
             }
         }
-
         return cash
     }
 
-    let cash1 = cacheify(clean(stringA))
-    let cash2 = cacheify(clean(stringB))
+    //split Array
+    let arr1 = clean(stringA)
+    let arr2 = clean(stringB)
 
-    let key1 = Object.keys(cash1)
-    let key2 = Object.keys(cash2)
+    //hash objs
+    let hash1 = cacheify(arr1)
+    let hash2 = cacheify(arr2)
 
-    if(key1.length !== key2.length){return false}
+    //keys
+    let key1 = Object.keys(hash1)
+    let key2 = Object.keys(hash2)
+
+    if(key1.length !== key2.length){
+        return false
+    }
 
     for(let i = 0; i < key1.length; i++){
         let element = key1[i]
-        let val1 = cash1[element]
-        let val2 = cash2[element]
-        if(val1 !== val2){
-            return false
+        let val1 = hash1[element]
+        let val2 = hash2[element]
+        if(val1 != val2){
+            return false 
         }
     }
+
     return true
 }
 
-anagrams('Hello', 'oLL eh')
+anagrams('Hello', 'oLaL eh')
 
 module.exports = anagrams;
