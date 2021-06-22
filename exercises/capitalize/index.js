@@ -9,21 +9,23 @@
 
 function capitalize(str) {
 
-    let strArr = str.split(" ")
-    let splitSent = []
+    let strArr = str.split(' ')
+    let capArr = []
 
-    for(let i = 0; i < strArr.length; i++ ){
-        let cap = strArr[i].split('')[0].toUpperCase()
-        let restWord = strArr[i].slice(1)
+    for(let i = 0; i < strArr.length; i++){
+        let element = strArr[i]
 
-        let capWord = cap + restWord
-        splitSent.push(capWord)
+        let fl = element[0].toUpperCase()
+        let otherLetters = element.slice(1)
+
+        let cw = fl + otherLetters
+        capArr.push(cw)
     }
 
-    let fullCapSent = splitSent.join(" ")
+    let cs = capArr.join(' ')
 
-    return(fullCapSent)
-
+    console.log(cs)
+    return cs
 }
 
 capitalize("a short sentence")
