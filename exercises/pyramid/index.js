@@ -15,22 +15,22 @@
 //       '#####'
 
 function pyramid(n) {
-    let width = 2*n-1
-    let midP = Math.floor(width/2)
 
-    for(let row = 0; row < n; row++){
-        let stair = ""
+    let totalWidth = 2*n-1
+    let midPoint = Math.floor(totalWidth/2)
 
-        for(let col = 0; col < width; col++){
-            if(midP - row <= col && midP + row >= col){
-                stair += "#"
-            }else{
-                stair += " " 
+    for(let row = 0; row < n; row++){//row 
+        let lvl = ''
+        for(let col = 0; col <totalWidth; col++){//col
+            if(midPoint - row <= col && midPoint + row >= col){
+                lvl += "#"
+            }else {
+                lvl += " "
             }
         }
-
-        console.log(stair)
+        console.log(lvl)
     }
+
 }
 
 pyramid(5)

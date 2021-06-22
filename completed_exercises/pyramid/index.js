@@ -35,21 +35,23 @@ function pyramid(n, row = 0, level = '') {
 }
 
 module.exports = pyramid;
-//
-// function pyramid(n) {
-//   const midpoint = Math.floor((2 * n - 1) / 2);
-//
-//   for (let row = 0; row < n; row++) {
-//     let level = '';
-//
-//     for (let column = 0; column < 2 * n - 1; column++) {
-//       if (midpoint - row <= column && midpoint + row >= column) {
-//         level += '#';
-//       } else {
-//         level += ' ';
-//       }
-//     }
-//
-//     console.log(level);
-//   }
-// }
+
+
+//answer
+function pyramid(n) {
+  let totalWidth = 2*n-1
+  let midPoint = Math.floor((totalWidth)/2)
+  for(let row = 0; row< n; row++){//row
+      let lvl = '';
+
+      for(let col = 0; col< totalWidth; col++){//column
+          if(midPoint - row <= col && midPoint + row >= col){
+              lvl+="#"
+          }else {
+              lvl+=" "
+          }
+      }
+      console.log(lvl)
+  }
+  
+}
