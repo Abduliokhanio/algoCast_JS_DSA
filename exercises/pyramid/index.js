@@ -15,16 +15,16 @@
 //       '#####'
 
 function pyramid(n) {
-
     let totalWidth = 2*n-1
     let midPoint = Math.floor(totalWidth/2)
 
-    for(let row = 0; row < n; row++){//row 
-        let lvl = ''
-        for(let col = 0; col <totalWidth; col++){//col
-            if(midPoint - row <= col && midPoint + row >= col){
+    for(let row = 0; row < n; row++){//rows
+        let lvl = ""
+        for(let col= 0 ; col < totalWidth; col++){//col
+            if(midPoint-row <= col && midPoint+row >= col){
                 lvl += "#"
-            }else {
+            }
+            else{
                 lvl += " "
             }
         }
