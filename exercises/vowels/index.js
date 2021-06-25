@@ -8,25 +8,23 @@
 //   vowels('Why?') --> 0
 
 function vowels(str) {
-    let count = 0 
-    let vowelsList = ["a","e","i","o","u"]
+
     let strArr = str.toLowerCase().split('')
+    let counter = 0
+    let vowels = ["a","e","i","o","u"]
 
-    for(let i = 0; i < strArr.length; i++ ){
-        if(vowelsList.includes(strArr[i])){
-            count++
+
+    for(let i = 0; i <= strArr.length; i++){
+        if(vowels.includes(strArr[i])){
+            counter++
         }
-    }
+    }   
 
-    console.log(count)
-    return count
+    console.log(counter)
+    return counter++
+
 }
 
-function clean(str){
-    let arr = str.toLowerCase().split('')
-
-    return arr
-}
 
 vowels('Why do you ask?')
 
