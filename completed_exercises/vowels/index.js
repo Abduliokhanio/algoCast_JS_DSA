@@ -26,3 +26,21 @@ module.exports = vowels;
 //
 //   return count;
 // }
+
+
+// Abdul answer
+function vowels(str) {
+  let count = 0
+  let strArr = str.toLowerCase().split("")
+
+  let vowlesArray = ['a','e','i', 'o', 'u']
+
+  for(let i = 0; i< strArr.length; i++){
+      if(vowlesArray.includes(strArr[i])){
+          count++
+      }
+  }
+
+  console.log(count)
+  return count
+}

@@ -16,56 +16,48 @@
 //     [10,  9,  8, 7]]
 
 function matrix(n) {
-
     let results = []
 
-    for(let i = 0; i < n; i++){
+    for(let i = 0; i<n; i++){
         results.push([])
     }
 
+    let startRow = 0
+    let endRow = n-1
+    let startCol = 0
+    let endCol = n-1
     let counter = 1
 
-    let startColumn = 0 
-    let endColumn =  n-1
-
-    let startRow = 0 
-    let endRow = n-1
-
-    while(startColumn <= endColumn && startRow <= endRow){
-        //top 
-        for(let i = startColumn; i <= endColumn; i++){
-            results[startRow][i] = counter 
+    while(startRow <= endRow && startCol <= endCol){
+        //top
+        for(let i = startCol; i <= endCol; i++){
+            results[startRow][i] = counter
             counter++
         }
         startRow++
-
         //right
-        for(let i = startRow; i <= endRow; i++){
-            results[i][endColumn] = counter
+        for(let i = startRow; i<= endRow; i++){
+            results[i][endCol]=counter
             counter++
         }
-        endColumn--
+        endCol--
 
         //bottom
-        for(let i = endColumn; i >= startColumn; i--){
-            results[endRow][i] =counter
+        for(let i = endCol; i>= startCol; i-- ){
+            results[endRow][i] = counter
             counter++
         }
         endRow--
-
+        
         //left 
-        for(let i = endRow; i >= startRow; i--){
-            results[i][startColumn] = counter
+        for(let i = endRow; i>= startRow; i--){
+            results[i][startCol] = counter
             counter++
         }
-        startColumn++
+        startCol++
     }
-
     console.log(results)
-    return results
-   
 }
 
-matrix(6)
-
+matrix(4)
 module.exports = matrix;
