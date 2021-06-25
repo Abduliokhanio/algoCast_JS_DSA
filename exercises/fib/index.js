@@ -9,20 +9,22 @@
 //   fib(4) === 3
 
 function memoize(fn){
+
     let cache = {}
 
     return function(...args){
         if(cache[args]){
             return cache[args]
         }
-    let result = fn.apply(this, null)
-    cache[args] = result
-    return result
+        let result = fn.apply(this, null)
+        cache[args] = results
+
+        return result
     }
 }
 
 function slowFib(n){
-    if(n < 2){
+    if(n<2){
         return n
     }
 
@@ -30,7 +32,5 @@ function slowFib(n){
 }
 
 let fib = memoize(slowFib)
-
-console.log(fib(5))
 
 module.exports = fib;
