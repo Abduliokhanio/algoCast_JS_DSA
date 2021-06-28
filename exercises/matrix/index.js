@@ -16,49 +16,51 @@
 //     [10,  9,  8, 7]]
 
 function matrix(n) {
+    
     let result = []
 
-    for(let i = 0; i < n; i++ ){
+    for(let i = 0; i < n; i++){
         result.push([])
     }
 
     let counter = 1
+    let rowStart = 0
+    let rowEnd = n-1
+    let colStart = 0
+    let colEnd = n-1
 
-    let startRow = 0
-    let endRow = n-1
-    let startCol = 0
-    let endCol = n-1
+    while(colStart <= colEnd && rowStart <= rowEnd){
 
-    while(startCol <= endCol && startRow <= endRow){
         //top
-        for(let i = startCol; i <= endCol; i++){
-            result[startRow][i] = counter 
+        for(let i = colStart; i <=colEnd; i++){
+            result[rowStart][i]= counter
             counter++
         }
-        startRow++
+        rowStart++
 
         //right
-        for(let i = startRow; i<= endRow; i++){
-            result[i][endCol] = counter
+        for(let i = rowStart; i<= rowEnd; i++){
+            result[i][colEnd]= counter
             counter++
         }
-        endCol--
+        colEnd--
 
         //bottom
-        for(let i = endCol; i >= startCol; i--){
-            result[endRow][i] = counter
+        for(let i = colEnd; i >= colStart; i--){
+            result[rowEnd][i]= counter
             counter++
         }
-        endRow--
+        rowEnd--
 
-        //left 
-        for(let i = endRow; i >= startRow; i--){
-            result[i][startCol] =counter 
+        //left
+        for(let i = rowEnd; i>= rowStart; i--){
+            result[i][colStart]= counter
             counter++
         }
-        startCol++
+        colStart++
 
     }
+
     console.log(result)
 
 }

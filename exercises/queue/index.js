@@ -8,19 +8,19 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
-class Queue {
+class Queue {//FILO
 
-    constructor(){
-        this.data = []
-    }
+   constructor(){
+       this.data = []
+   }
 
-    add(n){
+   add(n){
         this.data.unshift(n)
-    }
+   }
 
-    remove(){
-        return this.data.pop()
-    }
+   remove(){
+       return this.data.pop()
+   }
 
 }
 
