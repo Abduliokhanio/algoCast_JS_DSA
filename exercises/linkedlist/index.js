@@ -14,22 +14,24 @@ class Node {
 class LinkedList {
 
     constructor(){
-        this.head = null;
+        this.head = null
     }
 
     insertFirst(data){
-        let node = new Node(data, this.head)
-        this.head = node
+
+        let nn = new Node(data,this.head)
+
+        this.head = nn
     }
 
     size(){
-        let counter = 0;
-        let node = this.head;
-
+        let node = this.head
+        let counter = 0
         while(node){
             counter++
             node = node.next
         }
+
         return counter
     }
 
@@ -38,133 +40,20 @@ class LinkedList {
     }
 
     getLast(){
-
-        if(!this.head){
+        let node = this.head
+        if(!node){
             return null
         }
-        
-        let node = this.head
+
         while(node){
+
             if(!node.next){
                 return node
             }
+
             node = node.next
         }
 
-    }
-
-    clear(){
-        this.head = null
-    }
-
-    removeFirst(){
-        if (!this.head) {
-            return;
-          }
-        this.head = this.head.next
-    }
-
-    removeLast(){
-
-        if(!this.head){
-            return;
-        }
-
-        if(!this.head.next){
-            this.head = null
-            return
-        }
-
-        let previous = this.head
-        let afterPrev = this.head.next
-
-        while(afterPrev.next){
-            previous = afterPrev
-            afterPrev = afterPrev.next
-        }
-        previous.next = null
-
-    }
-
-    insertLast(data){
-
-        let last = this.getLast()
-
-        if(last){
-            last.next = new Node(data)
-        }
-        else {
-            this.head = new Node(data)
-        }
-
-    }
-
-    getAt(index){
-        let counter = 0
-        let node = this.head
-        while(node){
-            if(counter === index){
-                return node
-            }
-
-            counter++
-            node = node.next
-        }
-        return null
-    }
-
-    removeAt(index){
-        if(!this.head){
-            return
-        }
-
-        if(index === 0){
-            this.head = this.head.next
-            return
-        }
-
-        let previous = this.getAt(index - 1)
-
-        if(!previous || !previous.next){
-            return
-        }
-
-        previous.next = previous.next.next
-    }
-
-    insertAt(data, index){
-        if(!this.head){
-            this.head = new Node(data)
-            return
-        }
-
-        if(index === 0){
-            this.head = new Node(data, this.head)
-            return
-        }
-
-        let previous = this.getAt(index -1)|| this.getLast()
-        let node = new Node(data, previous.next)
-        previous.next = node
-
-    }
-
-    forEach(fn){
-        let node = this.head
-        let counter = 0 
-        while(node){
-            fn(node, counter)
-            node = node.next
-            counter++
-        }
-    }
-
-    *[Symbol.iterator](){
-        let node = this.head
-        while(node){
-            yield node
-            node = node.next
-        }
     }
 
 }
