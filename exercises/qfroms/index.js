@@ -21,7 +21,7 @@ class Queue {
 
     constructor(){
         this.first = new Stack
-        this.second = new Stack
+        this.second =  new Stack
     }
 
     add(n){
@@ -29,19 +29,17 @@ class Queue {
     }
 
     remove(){
-
         while(this.first.peek()){
             this.second.push(this.first.pop())
         }
 
-        let result = this.second.pop()
+        let res = this.second.pop()
 
         while(this.second.peek()){
             this.first.push(this.second.pop())
         }
 
-        return result
-
+        return res
     }
 
     peek(){
@@ -49,13 +47,13 @@ class Queue {
             this.second.push(this.first.pop())
         }
 
-        let result = this.second.peek()
+        let res = this.second.peek()
 
         while(this.second.peek()){
             this.first.push(this.second.pop())
         }
 
-        return result 
+        return res
     }
 
 }
