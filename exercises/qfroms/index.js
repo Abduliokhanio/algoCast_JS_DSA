@@ -14,41 +14,48 @@
 
 const Stack = require('./stack');
 
+//we want a stack to behave like a Que
+// FILO -> FIFO
+
 class Queue {
 
     constructor(){
-        this.stackA = new Stack;
-        this.stackB = new Stack
+        this.first = new Stack
+        this.second = new Stack
     }
 
     add(n){
-        this.stackA.push(n)
-    }
-
-    peek(){
-        while(this.stackA.peek()){
-            this.stackB.push(this.stackA.pop())
-        }
-
-        let ans = this.stackB.peek()
-
-        while(this.stackB.peek()){
-            this.stackA.push(this.stackB.pop())
-        }
-        return ans
+        this.first.push(n)
     }
 
     remove(){
-        while(this.stackA.peek()){
-            this.stackB.push(this.stackA.pop())
+
+        while(this.first.peek()){
+            this.second.push(this.first.pop())
         }
 
-        let ans = this.stackB.pop()
+        let result = this.second.pop()
 
-        while(this.stackB.peek()){
-            this.stackA.push(this.stackB.pop())
+        while(this.second.peek()){
+            this.first.push(this.second.pop())
         }
-        return ans
+
+        return result
+
+    }
+
+    peek(){
+        while(this.first.peek()){
+            this.second.push(this.first.pop())
+        }
+
+        let result = this.second.peek()
+
+        while(this.second.peek()){
+            this.first.push(this.second.pop())
+        }
+
+        return result 
     }
 
 }

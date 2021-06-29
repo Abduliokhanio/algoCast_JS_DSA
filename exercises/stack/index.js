@@ -10,24 +10,23 @@
 //   s.pop(); // returns 2
 //   s.pop(); // returns 1
 
-class Stack {
+class Stack { //fifo
 
     constructor(){
         this.data = []
     }
 
-    push(n){
-        this.data.push(n)
-    }
+   push(n){
+       this.data.unshift(n)
+   }
 
-    pop(){
-        return this.data.pop(this.data.length-1)
-    }
+   pop(){
+        return this.data.shift()
+   }
 
-    peek(){
-        return this.data[this.data.length-1]
-    }
-
+   peek(){
+        return this.data[0]
+   }
 }
 
 module.exports = Stack;
